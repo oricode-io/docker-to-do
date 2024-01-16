@@ -21,6 +21,12 @@ app.get('/tasks', (req, res) => {
 });
 
 app.post('/tasks', (req, res) => {
+    if (req.body.name.length === 0) {
+        return res.status(400).send({
+            message: 'Task name cannot be empty',
+        });
+    }
+
     const task = new Task({
         name: req.body.name,
     });
