@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  database:
+    image: 'mongo'
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data/db
+    env_file:
+      - ./database/.env
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    depends_on:
+      - database
+    env_file:
+      - ./server/.env
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+volumes:
+  data:
