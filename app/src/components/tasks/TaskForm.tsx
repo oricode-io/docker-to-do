@@ -11,7 +11,7 @@ interface TaskFormProps {
 const TaskForm: FC<TaskFormProps> = ({onSubmitHandler, enteredTaskText, updateTaskTextHandler}) => {
     return (
         <>
-            <h1 className="text-8xl font-bold">Tasks</h1>
+            <h1 className="text-8xl font-bold">To Do</h1>
             <form
                 className="flex flex-row justify-center items-center my-10"
                 onSubmit={(event) => onSubmitHandler(event)}
