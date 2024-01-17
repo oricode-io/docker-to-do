@@ -62,9 +62,9 @@ function App() {
     return (
         <div className="flex flex-1 flex-row justify-center items-center h-dvh">
             <div className="flex flex-1 flex-col justify-center items-center bg-black h-dvh">
-                <div className="flex flex-1 flex-col justify-center items-center">
-                    <h1 className="text-8xl font-bold text-white">Docker</h1>
-                    <p className="text-white px-10 py-6">
+                <div className="flex flex-1 flex-col justify-start items-center">
+                    <h1 className="text-8xl font-bold text-white mt-32">Docker</h1>
+                    <p className="text-white px-20 py-6">
                         Docker To Do is a simple to do list application that uses Docker containers to run a MongoDB
                         database, a Node.js server, and a React.js front-end. This application demonstrates the use of
                         Docker,
@@ -78,7 +78,8 @@ function App() {
                 </div>
             </div>
             <div className="flex flex-1 flex-col justify-center items-center h-dvh">
-                <div className="flex flex-1 flex-col justify-center items-center">
+                <div className="flex flex-1 flex-col justify-start items-center">
+                    <h1 className="text-8xl font-bold mt-32">To Do</h1>
                     <TaskForm
                         onSubmitHandler={onSubmitHandler}
                         enteredTaskText={enteredTaskText}
