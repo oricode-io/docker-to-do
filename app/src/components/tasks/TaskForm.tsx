@@ -10,20 +10,17 @@ interface TaskFormProps {
 
 const TaskForm: FC<TaskFormProps> = ({onSubmitHandler, enteredTaskText, updateTaskTextHandler}) => {
     return (
-        <>
-            <h1 className="text-8xl font-bold">To Do</h1>
-            <form
-                className="flex flex-row justify-center items-center my-10"
-                onSubmit={(event) => onSubmitHandler(event)}
-            >
-                <TaskInput
-                    placeholder={"Feed the turtle..."}
-                    value={enteredTaskText}
-                    onChange={updateTaskTextHandler}
-                />
-                <AddTaskButton onClick={onSubmitHandler}/>
-            </form>
-        </>
+        <form
+            className="flex flex-row justify-center items-center my-10"
+            onSubmit={(event) => onSubmitHandler(event)}
+        >
+            <TaskInput
+                placeholder={"Feed the turtle..."}
+                value={enteredTaskText}
+                onChange={updateTaskTextHandler}
+            />
+            <AddTaskButton onClick={onSubmitHandler}/>
+        </form>
     );
 }
 
